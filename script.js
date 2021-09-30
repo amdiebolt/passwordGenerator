@@ -17,39 +17,58 @@ function generatePassword() {
   var lowerConfirm = window.confirm("Would you like to include lowercase letters?")
   var upperConfirm = window.confirm("Would you like to include uppercase letters?")
 
-  if (numConfirm){
-    var char = numChar
-  }
-  else if (numConfirm && specialConfirm){
-    var char = numChar.concat(specialChar)
+  if (numConfirm && lowerConfirm && specialChar && upperConfirm){
+    var char = numChar.concat(specialChar, alphaLowerChar, alphaUpperChar)
   }
   else if (numConfirm && lowerConfirm && specialChar){
     var char = numChar.concat(specialChar, alphaLowerChar)
   }
-  else if (numConfirm && lowerConfirm && specialChar && upperConfirm){
-    var char = numChar.concat(specialChar, alphaLowerChar, alphaUpperChar)
-  }
-  else if (specialConfirm){
-    var char = specialChar
-  }
-  else if (lowerConfirm && specialChar){
-    var char = specialChar.concat(alphaLowerChar)
+  else if (lowerConfirm && numConfirm && upperConfirm){
+    var char = numConfirm.concat(alphaLowerChar, alphaUpperChar)
   }
   else if (lowerConfirm && specialChar && upperConfirm){
     var char = specialChar.concat(alphaLowerChar, alphaUpperChar)
   }
+  else if (numConfirm && specialChar && upperConfirm){
+    var char = specialChar.concat(alphaLowerChar, alphaUpperChar)
+  }
+  else if (numConfirm && specialConfirm){
+    var char = numChar.concat(specialChar)
+  }
+  else if (specialConfirm && upperConfirm){
+    var char = specialChar.concat(alphaUpperChar)
+  }
+  else if (upperConfirm && lowerConfirm){
+    var char = alphaUpperChar.concat(alphaLowerChar)
+  }
+  else if (numConfirm && lowerConfirm){
+    var char = numChar.concat(alphaLowerChar)
+  }
+  else if (numConfirm && upperConfirm){
+    var char = numChar.concat(alphaUpperChar)
+  }
+  else if (numConfirm){
+    var char = numChar
+  }
+  else if (specialConfirm){
+    var char = specialChar
+  }
   else if (lowerConfirm){
     var char = alphaLowerChar
-  }
-  else if (lowerConfirm && upperConfirm){
-    var char = numChar.concat(alphaLowerChar, alphaUpperChar)
   }
   else if (upperConfirm){
     var char = alphaUpperChar
   }
+  
+  var blank = []
+
   for (var i = 0; i < passLength; i++) {
     newPass = char[Math.floor(Math.random()*char.length)]
-    }
+    blank.push(newPass);
+  }
+
+  var finalPass = blank.join("");
+  return finalPass
 
 }
 
@@ -83,4 +102,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
 
