@@ -5,7 +5,7 @@ var specialChar = ["?","!","@","#","$","%","&"];
 var alphaLowerChar = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 var alphaUpperChar = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 
-
+// Writing out the password generator function
 function generatePassword() {
   var passLength = window.prompt("Please enter desired password length between 8 and 128 characters.")
   if (passLength < 8 && passLength > 128){
@@ -17,20 +17,24 @@ function generatePassword() {
   var lowerConfirm = window.confirm("Would you like to include lowercase letters?")
   var upperConfirm = window.confirm("Would you like to include uppercase letters?")
 
+  // Hashing out every possible combination of input
   if (numConfirm && lowerConfirm && specialChar && upperConfirm){
     var char = numChar.concat(specialChar, alphaLowerChar, alphaUpperChar)
   }
-  else if (numConfirm && lowerConfirm && specialChar){
+  else if (numConfirm && lowerConfirm && specialConfirm){
     var char = numChar.concat(specialChar, alphaLowerChar)
   }
-  else if (lowerConfirm && numConfirm && upperConfirm){
+  else if (numConfirm && lowerConfirm && upperConfirm){
     var char = numConfirm.concat(alphaLowerChar, alphaUpperChar)
   }
-  else if (lowerConfirm && specialChar && upperConfirm){
+  else if (lowerConfirm && specialConfirm && upperConfirm){
     var char = specialChar.concat(alphaLowerChar, alphaUpperChar)
   }
-  else if (numConfirm && specialChar && upperConfirm){
+  else if (numConfirm && specialConfirm && upperConfirm){
     var char = specialChar.concat(alphaLowerChar, alphaUpperChar)
+  }
+  else if (specialConfirm && lowerConfirm){
+    var char = specialChar.concat(alphaLowerChar)
   }
   else if (numConfirm && specialConfirm){
     var char = numChar.concat(specialChar)
@@ -71,23 +75,6 @@ function generatePassword() {
   return finalPass
 
 }
-
-//  //var newPass = char[Math.floor(Math.random()*char.length)]
-//   if (window.confirm("Would you like to include numbers?")){
-//     char.concat(numChar)
-// }
-//   if (window.confirm("Would you like to include spcial characters?")){
-//     char.concat(specialChar)
-// }
-//   if (window.confirm("Would you like to include upper case letters?")){
-//     char.concat(alphaUpperChar)
-// }
-//   if (window.confirm("Would you like to include lower case letters?")){
-//     char.concat(alphaLowerChar)
-//     return newPass 
-// }
-// }
-
 
 var generateBtn = document.querySelector("#generate");
 
