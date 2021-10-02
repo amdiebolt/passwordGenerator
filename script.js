@@ -31,7 +31,7 @@ function generatePassword() {
     var char = specialChar.concat(alphaLowerChar, alphaUpperChar)
   }
   else if (numConfirm && specialConfirm && upperConfirm){
-    var char = specialChar.concat(alphaLowerChar, alphaUpperChar)
+    var char = specialChar.concat(numChar, alphaUpperChar)
   }
   else if (specialConfirm && lowerConfirm){
     var char = specialChar.concat(alphaLowerChar)
