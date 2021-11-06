@@ -1,5 +1,7 @@
 # Password Generator
 
+## Deployed Page: https://amdiebolt.github.io/passwordGenerator/
+
 ## Description
 
 - This website generates random passwords with options to include/exclude various character types
@@ -10,4 +12,8 @@
 ## Screenshot
 
 ![password generator](https://user-images.githubusercontent.com/89421292/135722334-e3f88a15-cd97-429e-b228-9f1925a92629.PNG)
+
+## License:
+
+
 
