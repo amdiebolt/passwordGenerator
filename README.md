@@ -12,6 +12,7 @@
 ## Screenshot
 
 ![password generator](https://user-images.githubusercontent.com/89421292/135722334-e3f88a15-cd97-429e-b228-9f1925a92629.PNG)
+![password2](https://user-images.githubusercontent.com/89421292/140620549-58b2e203-360c-41e0-9a79-3f0098da3405.PNG)
 
 ## License:
 
